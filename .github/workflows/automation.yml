@@ -19,7 +19,7 @@ jobs:
           python-version: "3.11"
 
       - name: Run script
-        run: python scripts/script.py
+        run: python script/script.py
 
       - name: Commit log file
         run: |
