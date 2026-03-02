@@ -8,7 +8,7 @@ stock_data = {}  # Final dictionary
 error_symbols = []
 
 ### below 4 lines to import the data
-with open("config.json") as f:
+with open("config/strike_price.json") as f:
     config = json.load(f)
 expiry_date = config["expiry_date"]
 stock_data1 = {s: 0 for s in config["stocks"]}
