@@ -1,17 +1,19 @@
-
-stock_data1 = {
-"KALYANKJIL": 0, "GODREJPROP": 0, "HUDCO": 0, "HDFCLIFE": 0, "JIOFIN": 0, "PATANJALI": 0, "ITC": 0, "IREDA": 0, "ASIANPAINT": 0, "PAYTM": 0, "TATACONSUM": 0, "SBICARD": 0, "SYNGENE": 0, "KFINTECH": 0,
-}
-expiry_date="30-Mar-2026"
-
+import pandas as pd
+from nsepythonserver import *
+import time
+import random
+import json
+## to store values
 stock_data = {}  # Final dictionary
 error_symbols = []
 
-import pandas as pd
-from nsepythonserver import *
-import pandas as pd
-import time
-import random
+### below 4 lines to import the data
+with open("config.json") as f:
+    config = json.load(f)
+expiry_date = config["expiry_date"]
+stock_data1 = {s: 0 for s in config["stocks"]}
+
+
 
 ## for only put and depending decide a range
 def find_most_active_strike(df, current_price):
