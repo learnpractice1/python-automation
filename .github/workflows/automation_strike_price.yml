@@ -1,0 +1,33 @@
+name: Automation - Strike Price Finder
+
+on:
+  workflow_dispatch:   # manual trigger
+  schedule:
+    - cron: "*/5 * * * *" # run every 5 minutes
+
+jobs:
+  run-strike-price-finder:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run strike price finder
+        run: python script/strike_price_finder.py
+
+      - name: Upload results
+        uses: actions/upload-artifact@v3
+        with:
+          name: strike-price-results
+          path: |
+            stock_data.xlsx
+            error_symbols.csv
