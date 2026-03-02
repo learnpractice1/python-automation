@@ -1,4 +1,3 @@
-pip install xlsxwriter nsepythonserver
 
 stock_data1 = {
 "KALYANKJIL": 0, "GODREJPROP": 0, "HUDCO": 0, "HDFCLIFE": 0, "JIOFIN": 0, "PATANJALI": 0, "ITC": 0, "IREDA": 0, "ASIANPAINT": 0, "PAYTM": 0, "TATACONSUM": 0, "SBICARD": 0, "SYNGENE": 0, "KFINTECH": 0,
