@@ -3,7 +3,7 @@ name: Automation - Strike Price Finder
 on:
   workflow_dispatch:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "30 3 * * 1-5"
 
 jobs:
   run-strike-price-finder:
